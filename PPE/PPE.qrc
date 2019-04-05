@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/PPE">
+        <file>oui.html</file>
+    </qresource>
+</RCC>

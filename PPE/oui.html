@@ -1,0 +1,136 @@
+﻿<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Facture {{ borne_name }} ({{ borne_id }})</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            margin: 0;
+            justify-content: center;
+            text-align: center;
+            font: 12pt/1.5 'Raleway', 'Cambria', sans-serif;
+            font-weight: 300;
+            background: #fff;
+            color: #666;
+            -webkit-print-color-adjust: exact;
+            overflow: hidden;
+        }
+
+        header {
+            padding: 16px;
+            position: relative;
+            color: #888;
+        }
+
+            header h1,
+            header h2 {
+                font-weight: 200;
+                margin: 0;
+            }
+
+            header h1 {
+                font-size: 27pt;
+                letter-spacing: 4px;
+            }
+
+        body > * {
+            width: 100%;
+            height: 19.7%;
+            max-width: auto;
+            margin: 2px auto;
+            background: #f0f0f0;
+        }
+
+        footer {
+            padding: 16px;
+        }
+
+            footer p {
+                font-size: 9pt;
+                margin: 0;
+                font-family: 'Nunito';
+                color: #777;
+            }
+
+        section,
+        table {
+            padding: 8px 0;
+            position: relative;
+        }
+
+        dd {
+            margin: 2px auto;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>
+            FACTURE {{ borne_name }} ({{ borne_id }})
+        </h1>
+    </header>
+    <section>
+        <dl>
+            <dt>Facture {{ id_Facture }}</dt>
+            <dt>Date de facturation : TODAY</dt>
+        </dl>
+    </section>
+    <section>
+        <dl class="bloc">
+            <dt>Facturé à:</dt>
+            <dd>
+                {{ borne_name }} ({{ borne_id }}) <br>
+                ADDRESS,<br>
+                ADDRESS
+            </dd>
+        </dl>
+        <dl class="bloc">
+            <dt>Description de service : <b>Location ChopTaPhoto</b></dt>
+            <dt>Période totale : <b>{{ TODO }} au {{ TODO }}</b></dt>
+        </dl>
+    </section>
+    <table>
+        <thead>
+            <tr>
+                <th>Période</th>
+                <th>Description</th>
+                <th>Heures</th>
+                <th>Taux</th>
+                <th>Montant</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Du {{ TODO }} au {{ TODO }}</td>
+                <td>Location Appareil photo</td>
+                <td>{{ number }}&#8202;h</td>
+                <td>{{ price }}&#8202;€/h</td>
+                <td>{{ total_price }}&#8202;€</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">− Faire les chèques payable au nom de moi −</td>
+                <td>Total:</td>
+                <td>{{ total_price }}&#8202;€</td>
+            </tr>
+        </tfoot>
+    </table>
+    <footer>
+        <p>ChopTaPhoto | <a href="http://choptaphoto.com">choptaphoto.com</a></p>
+    </footer>
+</body>
+
+</html>
+
