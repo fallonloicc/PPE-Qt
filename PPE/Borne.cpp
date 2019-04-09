@@ -49,13 +49,20 @@ void Borne::loadBorne()
 		QJsonDocument jsonResponse = QJsonDocument::fromJson(strReply.toUtf8());
 		QJsonArray json_array = jsonResponse.array();
 
+		int compt = 0;
+
 		foreach(const QJsonValue &value, json_array) {
 
 			QJsonObject json_obj = value.toObject();
-			qDebug() << json_obj["id"].toString();
-			qDebug() << json_obj["nom"].toString();
-		}
+			QString libelle =  json_obj["libelle"].toString();
+			QString prix = json_obj["prix"].toString();
+			QString id = json_obj["idBornes"].toString();
+			QString adresse = json_obj["adresseMac"].toString();
 
+			ajouterBorne(libelle, prix, id, adresse);
+			compt++; 
+		}
+		qDebug() << compt;
 		delete reply;
 	}
 	else {
@@ -82,6 +89,17 @@ void Borne::RecupInfo()
 	QString typeBorne = ui.editType->text();
 
 	ajouterBorne(nomBorne, prixBorne, numBorne, typeBorne);
+
+	ui.editNom->clear();
+	ui.editPrix->clear();
+	ui.editNum->clear();
+	ui.editType->clear();
+
+	QNetworkAccessManager mgr;
+	QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)),SLOT(quit()));
+
+	// the HTTP request
+	QNetworkRequest req(QUrl(QString("https://ibm-patisserie-mysql-php-20190301075256009-spontaneous-toucan.eu-gb.mybluemix.net/API/ajoutbornes.php?prix="+prixBorne+"&&libelle="+nomBorne+"&&adresseMac="+typeBorne)));
 }
 
 
@@ -103,10 +121,6 @@ void Borne::ajouterBorne(QString nomBorne, QString prixBorne, QString numBorne, 
 			ui.TableBorne->setItem(nbLines, 2, new QTableWidgetItem(numBorne));
 			ui.TableBorne->setItem(nbLines, 3, new QTableWidgetItem(typeBorne));
 
-			ui.editNom->clear();
-			ui.editPrix->clear();
-			ui.editNum->clear();
-			ui.editType->clear();
 		}
 		else
 		{
@@ -116,26 +130,19 @@ void Borne::ajouterBorne(QString nomBorne, QString prixBorne, QString numBorne, 
 
 	for (int i = 0; i < items; i++)
 	{
-		if (ui.editNom->text() != ui.TableBorne->item(i,colonn)->text())
+		qDebug() << items;
+		if (nomBorne != ui.TableBorne->item(i,colonn)->text())
 		{
-			if (ui.editNom->text() != "" && ui.editNum->text() != "" && ui.editPrix->text() != "" && ui.editType->text() != "")
+			if (nomBorne != "" && prixBorne != "" && numBorne != "" && typeBorne != "")
 			{
-				QString nomBorne = ui.editNom->text();
-				QString prixBorne = ui.editPrix->text();
-				QString numBorne = ui.editNum->text();
-				QString typeBorne = ui.editType->text();
-
 				int nbLines = ui.TableBorne->rowCount();
 				ui.TableBorne->setRowCount(nbLines + 1);
 				ui.TableBorne->setItem(nbLines, 0, new QTableWidgetItem(nomBorne));
 				ui.TableBorne->setItem(nbLines, 1, new QTableWidgetItem(prixBorne));
 				ui.TableBorne->setItem(nbLines, 2, new QTableWidgetItem(numBorne));
 				ui.TableBorne->setItem(nbLines, 3, new QTableWidgetItem(typeBorne));
+				i = items;
 
-				ui.editNom->clear();
-				ui.editPrix->clear();
-				ui.editNum->clear();
-				ui.editType->clear();
 			}
 			else
 			{
