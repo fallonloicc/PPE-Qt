@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>ClientWidget</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_7">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout_38">
@@ -22,10 +25,15 @@
         <widget class="QLabel" name="label_10">
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
+           <family>Century Gothic</family>
+           <pointsize>9</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 9pt &quot;Century Gothic&quot;;</string>
          </property>
          <property name="text">
           <string>CLIENTS</string>
@@ -37,6 +45,21 @@
        </item>
        <item>
         <widget class="QTableWidget" name="tabClient">
+         <property name="styleSheet">
+          <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+         </property>
+         <property name="lineWidth">
+          <number>3</number>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>150</number>
+         </attribute>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>150</number>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
          <column>
           <property name="text">
            <string>Nom client</string>
@@ -87,6 +110,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
           <widget class="QPushButton" name="ajoutClient">
+           <property name="styleSheet">
+            <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+           </property>
            <property name="text">
             <string>Ajouter</string>
            </property>
@@ -100,6 +126,9 @@
          </item>
          <item>
           <widget class="QPushButton" name="suppClient">
+           <property name="styleSheet">
+            <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+           </property>
            <property name="text">
             <string>Supprimer</string>
            </property>
@@ -109,6 +138,9 @@
        </item>
        <item>
         <widget class="QGroupBox" name="groupBox">
+         <property name="styleSheet">
+          <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+         </property>
          <property name="title">
           <string>Informations</string>
          </property>
@@ -242,6 +274,16 @@
                 </item>
                 <item>
                  <widget class="QLineEdit" name="siretClient"/>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>Mot de passe</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="editpasswd"/>
                 </item>
                </layout>
               </item>

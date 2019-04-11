@@ -11,11 +11,12 @@ public:
 	Borne(QWidget *parent = Q_NULLPTR);
 
 	void DeleteBorne();
-	void ajouterBorne(QString nomBorne, QString prixBorne, QString numBorne, QString typeBorne);
+	void ajouterBorne(QString nomBorne, QString prixBorne, QString numBorne, QString typeBorne, QString idBorne, QString url);
 	void loadBorne();
 	void RecupInfo();
 	QString getName() const;
 	void setName(QString const& name);
+	void Borne::removeTableau();
 
 private:
 	Ui::Borne ui;

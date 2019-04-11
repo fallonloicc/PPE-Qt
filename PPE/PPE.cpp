@@ -37,7 +37,7 @@ void PPE::ShowFacture()
 void PPE::ShowBorne()
 {
 	removeWidget();
-	// Affiche le contenu de la page Facture
+	// Affiche le contenu de la page Borne
 	Borne *pageBorne = new Borne;
 	ui.stackedWidget->addWidget(pageBorne);
 	ui.stackedWidget->setCurrentIndex(1);

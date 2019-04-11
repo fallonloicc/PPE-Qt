@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Facture</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 9pt &quot;Century Gothic&quot;;</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <layout class="QGridLayout" name="gridLayout">
@@ -32,9 +35,11 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
+         <family>Century Gothic</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="text">

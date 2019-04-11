@@ -2,6 +2,8 @@
 
 #include <QWidget>
 #include "ui_ClientWidget.h"
+#include "ui_PPE.h"
+
 using namespace std;
 
 class ClientWidget : public QWidget
@@ -15,6 +17,7 @@ public:
 	void addClient();
 	void delClient();
 	void clearInput();
+	void loadClient();
 
 private:
 	Ui::ClientWidget ui;
