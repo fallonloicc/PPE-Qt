@@ -126,7 +126,16 @@ void ClientWidget::addClient()
 void ClientWidget::delClient()
 {
 	int numLigne = ui.tabClient->currentRow();
+	QTableWidgetItem* item = ui.tabClient->item(numLigne, 0);
+	QString idClient = item->data(Qt::DisplayRole).toString();
 	ui.tabClient->removeRow(numLigne);
+
+	QEventLoop eventLoop;
+
+	QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+	connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
+
+	manager->get(QNetworkRequest(QUrl("https://fallonloic.fr/PPE2/API/suppborne.php?idClient=" + idClient)));
 }
 
 void ClientWidget::clearInput()
