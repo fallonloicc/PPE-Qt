@@ -59,7 +59,7 @@ void ClientWidget::loadClient()
 			QString adresse = json_obj["adresse"].toString();
 			QString siret = json_obj["siret"].toString();
 
-			addLine(nom, prenom, adresse, cp, ville, email, tel, siret);
+			addLine(id, nom, prenom, adresse, cp, ville, email, tel, siret);
 
 			compt++;
 		}
@@ -75,7 +75,7 @@ void ClientWidget::loadClient()
 
 }
 
-void ClientWidget::addLine(QString nom, QString prenom, QString adresse, QString codePostal, QString ville, QString mail, QString tel, QString siret)
+void ClientWidget::addLine(QString id, QString nom, QString prenom, QString adresse, QString codePostal, QString ville, QString mail, QString tel, QString siret)
 {
 	int nbLines = ui.tabClient->rowCount();
 	ui.tabClient->setRowCount(nbLines + 1);
@@ -87,6 +87,8 @@ void ClientWidget::addLine(QString nom, QString prenom, QString adresse, QString
 	ui.tabClient->setItem(nbLines, 5, new QTableWidgetItem(mail));
 	ui.tabClient->setItem(nbLines, 6, new QTableWidgetItem(tel));
 	ui.tabClient->setItem(nbLines, 7, new QTableWidgetItem(siret));
+	ui.tabClient->setItem(nbLines, 8, new QTableWidgetItem(id));
+
 	
 }
 
@@ -102,7 +104,7 @@ void ClientWidget::addClient()
 	QString siretClient = ui.siretClient->text();
 	QString passwdClient = ui.editpasswd->text();
 
-	addLine(nomClient, prenomClient, adresseClient, codePostalClient, villeClient, mailClient, numClient, siretClient);
+	addLine(0, nomClient, prenomClient, adresseClient, codePostalClient, villeClient, mailClient, numClient, siretClient);
 	clearInput();
 
 	QEventLoop eventLoop;
@@ -126,7 +128,7 @@ void ClientWidget::addClient()
 void ClientWidget::delClient()
 {
 	int numLigne = ui.tabClient->currentRow();
-	QTableWidgetItem* item = ui.tabClient->item(numLigne, 0);
+	QTableWidgetItem* item = ui.tabClient->item(numLigne, 8);
 	QString idClient = item->data(Qt::DisplayRole).toString();
 	ui.tabClient->removeRow(numLigne);
 
@@ -135,7 +137,7 @@ void ClientWidget::delClient()
 	QNetworkAccessManager *manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
 
-	manager->get(QNetworkRequest(QUrl("https://fallonloic.fr/PPE2/API/suppborne.php?idClient=" + idClient)));
+	manager->get(QNetworkRequest(QUrl("https://fallonloic.fr/PPE2/API/suppclients.php?idClient=" + idClient)));
 }
 
 void ClientWidget::clearInput()

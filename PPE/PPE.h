@@ -15,5 +15,6 @@ private:
 	void ShowFacture();
 	void ShowClient();
 	void ShowBorne();
+	void ShowConso();
 	void CloseWin();
 };

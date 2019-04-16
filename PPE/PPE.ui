@@ -118,12 +118,12 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="AjoutFacture">
+           <widget class="QPushButton" name="Conso">
             <property name="styleSheet">
              <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
             </property>
             <property name="text">
-             <string>Facture</string>
+             <string>Consommable</string>
             </property>
            </widget>
           </item>
@@ -143,12 +143,12 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="Photo">
+         <widget class="QPushButton" name="AjoutFacture">
           <property name="styleSheet">
            <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
           </property>
           <property name="text">
-           <string>Photo</string>
+           <string>Facture</string>
           </property>
          </widget>
         </item>

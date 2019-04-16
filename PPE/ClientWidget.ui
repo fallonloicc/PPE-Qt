@@ -52,10 +52,10 @@
           <number>3</number>
          </property>
          <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>150</number>
+          <number>135</number>
          </attribute>
          <attribute name="horizontalHeaderMinimumSectionSize">
-          <number>150</number>
+          <number>135</number>
          </attribute>
          <attribute name="horizontalHeaderStretchLastSection">
           <bool>true</bool>
@@ -98,6 +98,11 @@
          <column>
           <property name="text">
            <string>Siret</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Numéro client</string>
           </property>
          </column>
         </widget>

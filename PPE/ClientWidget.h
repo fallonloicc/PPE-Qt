@@ -13,7 +13,7 @@ class ClientWidget : public QWidget
 public:
 	ClientWidget(QWidget *parent = Q_NULLPTR);
 	~ClientWidget();
-	void addLine(QString nom, QString prenom, QString adresse, QString codePostal, QString ville, QString mail, QString tel, QString siret);
+	void addLine(QString id, QString nom, QString prenom, QString adresse, QString codePostal, QString ville, QString mail, QString tel, QString siret);
 	void addClient();
 	void delClient();
 	void clearInput();

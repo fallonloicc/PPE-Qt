@@ -115,6 +115,7 @@
   <ItemGroup>
     <ClCompile Include="Borne.cpp" />
     <ClCompile Include="ClientWidget.cpp" />
+    <ClCompile Include="Conso.cpp" />
     <ClCompile Include="Facture.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mustach.cpp" />
@@ -133,6 +134,7 @@
   <ItemGroup>
     <QtUic Include="Borne.ui" />
     <QtUic Include="ClientWidget.ui" />
+    <QtUic Include="Conso.ui" />
     <QtUic Include="Facture.ui" />
     <QtUic Include="PPE.ui" />
   </ItemGroup>
@@ -157,6 +159,12 @@
     <QtMoc Include="Facture.h">
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtWebChannel;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtUiTools</IncludePath>
       <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtWebChannel;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtUiTools</IncludePath>
+    </QtMoc>
+    <QtMoc Include="Conso.h">
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtWebChannel;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtNetwork</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_WEBENGINE_LIB;QT_WEBENGINECORE_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_WEBCHANNEL_LIB;QT_WEBENGINEWIDGETS_LIB;QT_UITOOLS_LIB;QT_NETWORK_LIB</Define>
+      <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtWebEngine;$(QTDIR)\include\QtWebEngineCore;$(QTDIR)\include\QtMultimediaWidgets;$(QTDIR)\include\QtWebChannel;$(QTDIR)\include\QtWebEngineWidgets;$(QTDIR)\include\QtUiTools;$(QTDIR)\include\QtNetwork</IncludePath>
+      <Define Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_WEBENGINE_LIB;QT_WEBENGINECORE_LIB;QT_MULTIMEDIAWIDGETS_LIB;QT_WEBCHANNEL_LIB;QT_WEBENGINEWIDGETS_LIB;QT_UITOOLS_LIB;QT_NETWORK_LIB</Define>
     </QtMoc>
     <ClInclude Include="mustach.h" />
   </ItemGroup>
