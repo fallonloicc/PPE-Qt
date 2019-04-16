@@ -11,7 +11,7 @@ class Conso : public QWidget
 public:
 	Conso(QWidget *parent = Q_NULLPTR);
 	void DeleteConso();
-	void ajouterConso(QString nomBorne, QString prixBorne, QString numBorne, QString typeBorne, QString idBorne, QString url);
+	void ajouterConso(QString nomConso, QString prixConso, QString numConso, QString stock);
 	void loadConso();
 	void RecupInfo();
 	QString getName() const;

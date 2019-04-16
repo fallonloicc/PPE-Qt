@@ -11,8 +11,8 @@ Conso::Conso(QWidget *parent)
 {
 	ui.setupUi(this);
 	loadConso();
-	connect(ui.AddButton, &QAbstractButton::clicked, this, &Conso::RecupInfo);
-	connect(ui.DelButton, &QAbstractButton::clicked, this, &Conso::DeleteConso);
+	connect(ui.AddButton_2, &QAbstractButton::clicked, this, &Conso::RecupInfo);
+	connect(ui.DelButton_2, &QAbstractButton::clicked, this, &Conso::DeleteConso);
 }
 
 
@@ -36,7 +36,7 @@ void Conso::loadConso()
 	QObject::connect(&mgr, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
 
 	// the HTTP request
-	QNetworkRequest req(QUrl(QString("https://fallonloic.fr/PPE2/API/bornes.php")));
+	QNetworkRequest req(QUrl(QString("https://fallonloic.fr/PPE2/API/conso.php")));
 	QNetworkReply *reply = mgr.get(req);
 	eventLoop.exec(); // blocks stack until "finished()" has been called
 
@@ -56,12 +56,10 @@ void Conso::loadConso()
 			QJsonObject json_obj = value.toObject();
 			QString libelle = json_obj["libelle"].toString();
 			QString prix = json_obj["prix"].toString();
-			QString id = json_obj["idBornes"].toString();
-			QString adresse = json_obj["adresseMac"].toString();
-			QString ip = json_obj["adresseIp"].toString();
-			QString url = json_obj["image"].toString();
+			QString id = json_obj["idConsosommables"].toString();
+			QString stock = json_obj["stock"].toString();
 
-			ajouterConso(libelle, prix, id, adresse, ip, url);
+			ajouterConso(libelle, prix, id, stock);
 
 			compt++;
 		}
@@ -81,39 +79,37 @@ void Conso::loadConso()
 void Conso::DeleteConso()
 {
 
-	int numLigne = ui.TableConso->currentRow();
-	QTableWidgetItem* item = ui.TableConso->item(numLigne, 0);
+	int numLigne = ui.tableConso->currentRow();
+	QTableWidgetItem* item = ui.tableConso->item(numLigne, 0);
 	QString idBorne = item->data(Qt::DisplayRole).toString();
-	ui.TableConso->removeRow(numLigne);
+	ui.tableConso->removeRow(numLigne);
 
 	QEventLoop eventLoop;
 
 	QNetworkAccessManager *manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
 
-	manager->get(QNetworkRequest(QUrl("https://fallonloic.fr/PPE2/API/suppborne.php?idBorne=" + idBorne)));
+	manager->get(QNetworkRequest(QUrl("https://www.fallonloic.fr/PPE2/API/suppconso.php?idConso="+idBorne)));
 
 }
 
 void Conso::RecupInfo()
 {
-	QString nomBorne = ui.editNom_2->text();
-	QString prixBorne = ui.editPrix_2->text();
-	QString numBorne = ui.editNum_2->text();
+	QString nomConso = ui.editNom_2->text();
+	QString prixConso = ui.editPrix_2->text();
+	QString numConso = ui.editNum_2->text();
 	QString stock = ui.editStock->text();
 	
 
-	if (nomBorne != "" && prixBorne != "" && numBorne != "" && typeBorne != "" && idBorne != "")
+	if (nomConso != "" && prixConso != "" && numConso != "" && stock != "")
 	{
-		ajouterConso(nomBorne, prixBorne, numBorne, typeBorne, idBorne, urlBorne);
+		ajouterConso(nomConso, prixConso, numConso, stock);
 	}
 
-	ui.editNom->clear();
-	ui.editPrix->clear();
-	ui.editNum->clear();
-	ui.editType->clear();
-	ui.editIP->clear();
-	ui.editURL->clear();
+	ui.editNom_2->clear();
+	ui.editPrix_2->clear();
+	ui.editNum_2->clear();
+	ui.editStock->clear();
 
 
 	QEventLoop eventLoop;
@@ -121,51 +117,30 @@ void Conso::RecupInfo()
 	QNetworkAccessManager *manager = new QNetworkAccessManager(this);
 	connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
 
-	if (urlBorne != "")
-	{
-		manager->get(QNetworkRequest(QUrl("https://fallonloic.fr/PPE2/API/ajoutborne.php?prix=" + prixBorne + "&libelle=" + nomBorne + "&adresseMac=" + typeBorne + "&adresseIp=" + idBorne + "&urlImage=" + urlBorne)));
-	}
-	else
-	{
-		manager->get(QNetworkRequest(QUrl("https://fallonloic.fr/PPE2/API/ajoutborne.php?prix=" + prixBorne + "&libelle=" + nomBorne + "&adresseMac=" + typeBorne + "&adresseIp=" + idBorne)));
-	}
+	manager->get(QNetworkRequest(QUrl("https://www.fallonloic.fr/PPE2/API/ajoutconso.php?prix="+prixConso+"&libelle="+nomConso+"&stock="+stock)));
+
 
 	Conso oui = new Conso;
 }
 
 
-void Conso::ajouterConso(QString nomBorne, QString prixBorne, QString numBorne, QString typeBorne, QString idBorne, QString url)
+void Conso::ajouterConso(QString nomConso, QString prixConso, QString numConso, QString stock)
 {
 
-	int items = ui.TableBorne->rowCount();
+	int items = ui.tableConso->rowCount();
 	const int colonn = 1;
 
 	if (items < 1)
 	{
-		if (nomBorne != "" && prixBorne != "" && numBorne != "" && typeBorne != "" && idBorne != "")
+		if (nomConso != "" && prixConso != "" && numConso != "" && stock != "")
 		{
-			if (url == "")
-			{
-				int nbLines = ui.TableBorne->rowCount();
-				ui.TableBorne->setRowCount(nbLines + 1);
-				ui.TableBorne->setItem(nbLines, 0, new QTableWidgetItem(numBorne));
-				ui.TableBorne->setItem(nbLines, 1, new QTableWidgetItem(nomBorne));
-				ui.TableBorne->setItem(nbLines, 2, new QTableWidgetItem(prixBorne));
-				ui.TableBorne->setItem(nbLines, 3, new QTableWidgetItem(typeBorne));
-				ui.TableBorne->setItem(nbLines, 4, new QTableWidgetItem(idBorne));
-				ui.TableBorne->setItem(nbLines, 5, new QTableWidgetItem("image/Pas_d'image_disponible.png"));
-			}
-			else
-			{
-				int nbLines = ui.TableBorne->rowCount();
-				ui.TableBorne->setRowCount(nbLines + 1);
-				ui.TableBorne->setItem(nbLines, 0, new QTableWidgetItem(numBorne));
-				ui.TableBorne->setItem(nbLines, 1, new QTableWidgetItem(nomBorne));
-				ui.TableBorne->setItem(nbLines, 2, new QTableWidgetItem(prixBorne));
-				ui.TableBorne->setItem(nbLines, 3, new QTableWidgetItem(typeBorne));
-				ui.TableBorne->setItem(nbLines, 4, new QTableWidgetItem(idBorne));
-				ui.TableBorne->setItem(nbLines, 5, new QTableWidgetItem(url));
-			}
+				int nbLines = ui.tableConso->rowCount();
+				ui.tableConso->setRowCount(nbLines + 1);
+				ui.tableConso->setItem(nbLines, 0, new QTableWidgetItem(numConso));
+				ui.tableConso->setItem(nbLines, 1, new QTableWidgetItem(nomConso));
+				ui.tableConso->setItem(nbLines, 2, new QTableWidgetItem(prixConso));
+				ui.tableConso->setItem(nbLines, 3, new QTableWidgetItem(stock));
+			
 		}
 		else
 		{
@@ -176,37 +151,16 @@ void Conso::ajouterConso(QString nomBorne, QString prixBorne, QString numBorne, 
 	for (int i = 0; i < items; i++)
 	{
 		qDebug() << items;
-		if (nomBorne != ui.TableBorne->item(i, colonn)->text())
+		if (nomConso != ui.tableConso->item(i, colonn)->text())
 		{
-			if (nomBorne != "" && prixBorne != "" && numBorne != "" && typeBorne != "" && idBorne != "")
+			if (nomConso != "" && prixConso != "" && numConso != "" && stock != "")
 			{
-				if (url == "")
-				{
-					int nbLines = ui.TableBorne->rowCount();
-					ui.TableBorne->setRowCount(nbLines + 1);
-					ui.TableBorne->setItem(nbLines, 0, new QTableWidgetItem(numBorne));
-					ui.TableBorne->setItem(nbLines, 1, new QTableWidgetItem(nomBorne));
-					ui.TableBorne->setItem(nbLines, 2, new QTableWidgetItem(prixBorne));
-					ui.TableBorne->setItem(nbLines, 3, new QTableWidgetItem(typeBorne));
-					ui.TableBorne->setItem(nbLines, 4, new QTableWidgetItem(idBorne));
-					ui.TableBorne->setItem(nbLines, 5, new QTableWidgetItem("image/Pas_d'image_disponible.png"));
-					i = items;
-
-				}
-				else
-				{
-					int nbLines = ui.TableBorne->rowCount();
-					ui.TableBorne->setRowCount(nbLines + 1);
-					ui.TableBorne->setItem(nbLines, 0, new QTableWidgetItem(numBorne));
-					ui.TableBorne->setItem(nbLines, 1, new QTableWidgetItem(nomBorne));
-					ui.TableBorne->setItem(nbLines, 2, new QTableWidgetItem(prixBorne));
-					ui.TableBorne->setItem(nbLines, 3, new QTableWidgetItem(typeBorne));
-					ui.TableBorne->setItem(nbLines, 4, new QTableWidgetItem(idBorne));
-					ui.TableBorne->setItem(nbLines, 5, new QTableWidgetItem(url));
-					i = items;
-
-				}
-
+				int nbLines = ui.tableConso->rowCount();
+				ui.tableConso->setRowCount(nbLines + 1);
+				ui.tableConso->setItem(nbLines, 0, new QTableWidgetItem(numConso));
+				ui.tableConso->setItem(nbLines, 1, new QTableWidgetItem(nomConso));
+				ui.tableConso->setItem(nbLines, 2, new QTableWidgetItem(prixConso));
+				ui.tableConso->setItem(nbLines, 3, new QTableWidgetItem(stock));
 			}
 			else
 			{
@@ -224,8 +178,8 @@ void Conso::ajouterConso(QString nomBorne, QString prixBorne, QString numBorne, 
 
 void Conso::removeTableau()
 {
-	while (ui.TableBorne->rowCount() > 0)
+	while (ui.tableConso->rowCount() > 0)
 	{
-		ui.TableBorne->removeRow(0);
+		ui.tableConso->removeRow(0);
 	}
 }

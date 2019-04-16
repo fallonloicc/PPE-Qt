@@ -44,7 +44,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QTableWidget" name="TableBorne_2">
+        <widget class="QTableWidget" name="tableConso">
          <property name="minimumSize">
           <size>
            <width>1236</width>
@@ -261,7 +261,7 @@
           <set>Qt::ImhNone</set>
          </property>
          <property name="text">
-          <string>Modifier</string>
+          <string>Ajouter</string>
          </property>
          <property name="iconSize">
           <size>

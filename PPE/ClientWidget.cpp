@@ -84,10 +84,14 @@ void ClientWidget::addLine(QString id, QString nom, QString prenom, QString adre
 	ui.tabClient->setItem(nbLines, 2, new QTableWidgetItem(adresse));
 	ui.tabClient->setItem(nbLines, 3, new QTableWidgetItem(codePostal));
 	ui.tabClient->setItem(nbLines, 4, new QTableWidgetItem(ville));
-	ui.tabClient->setItem(nbLines, 5, new QTableWidgetItem(mail));
+	/*ui.tabClient->setItem(nbLines, 5, new QTableWidgetItem(mail));
 	ui.tabClient->setItem(nbLines, 6, new QTableWidgetItem(tel));
 	ui.tabClient->setItem(nbLines, 7, new QTableWidgetItem(siret));
-	ui.tabClient->setItem(nbLines, 8, new QTableWidgetItem(id));
+	ui.tabClient->setItem(nbLines, 8, new QTableWidgetItem(id));*/
+
+	ui.tabClient->setItem(nbLines, 5, new QTableWidgetItem(tel));
+	ui.tabClient->setItem(nbLines, 6, new QTableWidgetItem(siret));
+	ui.tabClient->setItem(nbLines, 7, new QTableWidgetItem(id));
 
 	
 }

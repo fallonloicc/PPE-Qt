@@ -87,11 +87,6 @@
          </column>
          <column>
           <property name="text">
-           <string>Mail</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
            <string>Téléphone</string>
           </property>
          </column>
