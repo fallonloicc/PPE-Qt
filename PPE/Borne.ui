@@ -456,7 +456,7 @@
    <string>Borne</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+   <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -761,7 +761,7 @@
        <item>
         <widget class="QLineEdit" name="editNom">
          <property name="styleSheet">
-          <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+          <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
          </property>
         </widget>
        </item>
@@ -778,7 +778,7 @@
        <item>
         <widget class="QLineEdit" name="editPrix">
          <property name="styleSheet">
-          <string notr="true">font: 9pt &quot;Century Gothic&quot;;</string>
+          <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
          </property>
          <property name="text">
           <string/>
@@ -798,7 +798,7 @@
        <item>
         <widget class="QLineEdit" name="editNum">
          <property name="styleSheet">
-          <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+          <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
          </property>
         </widget>
        </item>
@@ -815,7 +815,7 @@
        <item>
         <widget class="QLineEdit" name="editType">
          <property name="styleSheet">
-          <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+          <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
          </property>
         </widget>
        </item>
@@ -834,7 +834,7 @@
      <item>
       <widget class="QLineEdit" name="editIP">
        <property name="styleSheet">
-        <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+        <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
        </property>
       </widget>
      </item>
@@ -851,7 +851,7 @@
      <item>
       <widget class="QLineEdit" name="editURL">
        <property name="styleSheet">
-        <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+        <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
        </property>
       </widget>
      </item>

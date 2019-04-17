@@ -46,7 +46,7 @@
        <item>
         <widget class="QTableWidget" name="tabClient">
          <property name="styleSheet">
-          <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+          <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
          </property>
          <property name="lineWidth">
           <number>3</number>
@@ -111,7 +111,7 @@
          <item>
           <widget class="QPushButton" name="ajoutClient">
            <property name="styleSheet">
-            <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+            <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
            </property>
            <property name="text">
             <string>Ajouter</string>
@@ -127,7 +127,7 @@
          <item>
           <widget class="QPushButton" name="suppClient">
            <property name="styleSheet">
-            <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+            <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
            </property>
            <property name="text">
             <string>Supprimer</string>
@@ -139,7 +139,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox">
          <property name="styleSheet">
-          <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+          <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
          </property>
          <property name="title">
           <string>Informations</string>
