@@ -16,7 +16,8 @@ public:
 	void RecupInfo();
 	QString getName() const;
 	void setName(QString const& name);
-	void Borne::removeTableau();
+	void removeTableau();
+	void changeDesign();
 
 private:
 	Ui::Borne ui;

@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/PPE">
         <file>oui.html</file>
+        <file>C:/xampp/htdocs/CV/PPE2/SiteVitrine/images/icons/logo.png</file>
     </qresource>
 </RCC>

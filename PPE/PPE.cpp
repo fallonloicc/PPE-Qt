@@ -4,12 +4,16 @@
 #include "Borne.h"
 #include "Conso.h"
 #include <QtWidgets>
+#include <QPixmap>
 
 	
 PPE::PPE(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	QPixmap pm("E:/PPE-Qt/img/logo.png"); // <- path to image file
+	ui.label_2->setPixmap(pm);
+	ui.label_2->setScaledContents(true);
 
 	connect(ui.AjoutFacture, &QAbstractButton::clicked, this, &PPE::ShowFacture);
 	connect(ui.AjoutBorne, &QAbstractButton::clicked, this, &PPE::ShowBorne);
