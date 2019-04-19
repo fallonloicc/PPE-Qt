@@ -12,6 +12,8 @@ PPE::PPE(QWidget *parent)
 {
 	ui.setupUi(this);
 	QPixmap pm("E:/PPE-Qt/img/logo.png"); // <- path to image file
+	ui.label->setPixmap(pm);
+	ui.label->setScaledContents(true);
 	ui.label_2->setPixmap(pm);
 	ui.label_2->setScaledContents(true);
 

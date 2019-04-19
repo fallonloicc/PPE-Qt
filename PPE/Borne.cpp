@@ -11,16 +11,12 @@ Borne::Borne(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	changeDesign();
+	ui.TableBorne->setStyleSheet("QHeaderView::section { background-color:#b7b2b2 }");
 	loadBorne();
 	connect(ui.AddButton, &QAbstractButton::clicked, this, &Borne::RecupInfo);
 	connect(ui.DelButton, &QAbstractButton::clicked, this, &Borne::DeleteBorne);
 }
 
-void Borne::changeDesign()
-{
-	ui.TableBorne->setStyleSheet("QHeaderView::section { background-color:#b7b2b2 }");
-}
 
 QString Borne::getName() const
 {

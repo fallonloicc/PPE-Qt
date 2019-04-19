@@ -17,7 +17,6 @@ public:
 	QString getName() const;
 	void setName(QString const& name);
 	void removeTableau();
-	void changeDesign();
 
 private:
 	Ui::Borne ui;

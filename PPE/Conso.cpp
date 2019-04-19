@@ -10,6 +10,7 @@ Conso::Conso(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	ui.tableConso->setStyleSheet("QHeaderView::section { background-color:#b7b2b2 }");
 	loadConso();
 	connect(ui.AddButton_2, &QAbstractButton::clicked, this, &Conso::RecupInfo);
 	connect(ui.DelButton_2, &QAbstractButton::clicked, this, &Conso::DeleteConso);

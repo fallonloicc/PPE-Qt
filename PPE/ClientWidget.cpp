@@ -10,6 +10,7 @@ ClientWidget::ClientWidget(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	ui.tabClient->setStyleSheet("QHeaderView::section { background-color:#b7b2b2 }");
 	loadClient();
 	connect(ui.ajoutClient, &QAbstractButton::clicked, this, &ClientWidget::addClient);
 	connect(ui.suppClient, &QAbstractButton::clicked, this, &ClientWidget::delClient);
