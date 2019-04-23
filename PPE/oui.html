@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Facture {{ borne_name }} ({{ borne_id }})</title>
+    <title>Facture : {{libelle}} ({{ idBornes }})</title>
     <style>
         * {
             box-sizing: border-box;
@@ -72,32 +72,45 @@
             font-weight: bold;
         }
     </style>
+
+    <script>
+
+        function date() {
+            n = new Date();
+            y = n.getFullYear();
+            m = n.getMonth() + 1;
+            d = n.getDate();
+            document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+        }
+
+    </script>
+
 </head>
 
-<body>
+<body onload="date()">
     <header>
         <h1>
-            FACTURE {{ borne_name }} ({{ borne_id }})
+            FACTURE :{{ idCommande }} || {{ dateCommande }}
         </h1>
     </header>
     <section>
         <dl>
-            <dt>Facture {{ id_Facture }}</dt>
-            <dt>Date de facturation : TODAY</dt>
+            <dt>Facture :{{ idCommande }}</dt>
+            <dt>Date de facturation : <p id="date"></p></dt>
         </dl>
     </section>
     <section>
         <dl class="bloc">
             <dt>Facturé à:</dt>
             <dd>
-                {{ borne_name }} ({{ borne_id }}) <br>
-                ADDRESS,<br>
-                ADDRESS
+                {{ nom }} {{ prenom }} <br>
+                {{adresse}},<br>
+                {{ville}} {{cp}}
             </dd>
         </dl>
         <dl class="bloc">
             <dt>Description de service : <b>Location ChopTaPhoto</b></dt>
-            <dt>Période totale : <b>{{ TODO }} au {{ TODO }}</b></dt>
+            <dt>Période totale : <b>{{ dateDebut }} au {{ dateFin }}</b></dt>
         </dl>
     </section>
     <table>
@@ -105,30 +118,31 @@
             <tr>
                 <th>Période</th>
                 <th>Description</th>
-                <th>Heures</th>
-                <th>Taux</th>
+                <th>Jour</th>
+                <th>TVA</th>
                 <th>Montant</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Du {{ TODO }} au {{ TODO }}</td>
+            <tr class="lignenul">
+                <td>Du {{ dateDebut }} au {{ dateFin }}</td>
                 <td>Location Appareil photo</td>
-                <td>{{ number }}&#8202;h</td>
-                <td>{{ price }}&#8202;€/h</td>
-                <td>{{ total_price }}&#8202;€</td>
+                <td>{{ number }}&#8202;j</td>
+                <td>10%&#8202;</td>
+                <td>{{ prix }}&#8202;€/j</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="3">− Faire les chèques payable au nom de moi −</td>
+                <td colspan="3">Trop bien !</td>
                 <td>Total:</td>
-                <td>{{ total_price }}&#8202;€</td>
+                <td>{{ prix }}&#8202;€</td>
             </tr>
         </tfoot>
     </table>
     <footer>
         <p>ChopTaPhoto | <a href="http://choptaphoto.com">choptaphoto.com</a></p>
+        {{ dateFin }}
     </footer>
 </body>
 
