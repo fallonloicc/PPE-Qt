@@ -10,7 +10,7 @@ ClientWidget::ClientWidget(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	ui.tabClient->setStyleSheet("QHeaderView::section { background-color:#b7b2b2 }");
+	ui.tabClient->setStyleSheet("QHeaderView::section { background-color:rgb(55, 55, 55); color: rgb(255, 255, 255); }");
 	loadClient();
 	connect(ui.ajoutClient, &QAbstractButton::clicked, this, &ClientWidget::addClient);
 	connect(ui.suppClient, &QAbstractButton::clicked, this, &ClientWidget::delClient);
@@ -134,15 +134,18 @@ void ClientWidget::delClient()
 {
 	int numLigne = ui.tabClient->currentRow();
 	QTableWidgetItem* item = ui.tabClient->item(numLigne, 8);
-	QString idClient = item->data(Qt::DisplayRole).toString();
-	ui.tabClient->removeRow(numLigne);
+	if (item != nullptr)
+	{
+		QString idClient = item->data(Qt::DisplayRole).toString();
+		ui.tabClient->removeRow(numLigne);
 
-	QEventLoop eventLoop;
+		QEventLoop eventLoop;
 
-	QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-	connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
+		QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+		connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
 
-	manager->get(QNetworkRequest(QUrl("https://fallonloic.fr/PPE2/API/suppclients.php?idClient=" + idClient)));
+		manager->get(QNetworkRequest(QUrl("https://fallonloic.fr/PPE2/API/suppclients.php?idClient=" + idClient)));
+	}
 }
 
 void ClientWidget::clearInput()

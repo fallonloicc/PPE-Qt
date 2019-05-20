@@ -19,6 +19,7 @@ Facture::Facture(QWidget *parent)
 {
 	ui.setupUi(this);
 	ListeFacture();
+	
 	connect(ui.valBtn, &QAbstractButton::clicked, this, &Facture::HTMLFacture);
 	
 }

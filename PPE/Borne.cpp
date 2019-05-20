@@ -11,7 +11,8 @@ Borne::Borne(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	ui.TableBorne->setStyleSheet("QHeaderView::section { background-color:#b7b2b2 }");
+
+	ui.TableBorne->setStyleSheet("QHeaderView::section { background-color:rgb(55, 55, 55); color: rgb(255, 255, 255); }");
 	loadBorne();
 	connect(ui.AddButton, &QAbstractButton::clicked, this, &Borne::RecupInfo);
 	connect(ui.DelButton, &QAbstractButton::clicked, this, &Borne::DeleteBorne);
@@ -85,16 +86,20 @@ void Borne::DeleteBorne()
 	
 	int numLigne = ui.TableBorne->currentRow();
 	QTableWidgetItem* item = ui.TableBorne->item(numLigne, 0);
-	QString idBorne = item->data(Qt::DisplayRole).toString();
-	ui.TableBorne->removeRow(numLigne);
+	if (item != nullptr)
+	{
+		QString idBorne = item->data(Qt::DisplayRole).toString();
+		ui.TableBorne->removeRow(numLigne);
 
-	QEventLoop eventLoop;
+		QEventLoop eventLoop;
 
-	QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-	connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
+		QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+		connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
 
-	manager->get(QNetworkRequest(QUrl("https://fallonloic.fr/PPE2/API/suppborne.php?idBorne="+ idBorne)));
+		manager->get(QNetworkRequest(QUrl("https://fallonloic.fr/PPE2/API/suppborne.php?idBorne=" + idBorne)));
 
+		Borne oui = new Borne;
+	}
 }
 
 void Borne::RecupInfo()
@@ -157,6 +162,7 @@ void Borne::ajouterBorne(QString nomBorne, QString prixBorne, QString numBorne, 
 				ui.TableBorne->setItem(nbLines, 3, new QTableWidgetItem(typeBorne));
 				ui.TableBorne->setItem(nbLines, 4, new QTableWidgetItem(idBorne));
 				ui.TableBorne->setItem(nbLines, 5, new QTableWidgetItem("image/Pas_d'image_disponible.png"));
+				
 			}
 			else
 			{
@@ -168,6 +174,7 @@ void Borne::ajouterBorne(QString nomBorne, QString prixBorne, QString numBorne, 
 				ui.TableBorne->setItem(nbLines, 3, new QTableWidgetItem(typeBorne));
 				ui.TableBorne->setItem(nbLines, 4, new QTableWidgetItem(idBorne));
 				ui.TableBorne->setItem(nbLines, 5, new QTableWidgetItem(url));
+				
 			}
 		}
 		else
@@ -194,7 +201,7 @@ void Borne::ajouterBorne(QString nomBorne, QString prixBorne, QString numBorne, 
 					ui.TableBorne->setItem(nbLines, 4, new QTableWidgetItem(idBorne));
 					ui.TableBorne->setItem(nbLines, 5, new QTableWidgetItem("image/Pas_d'image_disponible.png"));
 					i = items;
-
+					
 				}
 				else
 				{
@@ -207,7 +214,7 @@ void Borne::ajouterBorne(QString nomBorne, QString prixBorne, QString numBorne, 
 					ui.TableBorne->setItem(nbLines, 4, new QTableWidgetItem(idBorne));
 					ui.TableBorne->setItem(nbLines, 5, new QTableWidgetItem(url));
 					i = items;
-
+					
 				}
 
 			}
@@ -223,6 +230,7 @@ void Borne::ajouterBorne(QString nomBorne, QString prixBorne, QString numBorne, 
 			QMessageBox::critical(this, "ALERTE", "Le nom est déjà prit !");
 		}
 	}
+
 }
 
 void Borne::removeTableau()

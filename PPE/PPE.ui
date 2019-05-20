@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1343</width>
-    <height>818</height>
+    <width>1266</width>
+    <height>781</height>
    </rect>
   </property>
   <property name="palette">
@@ -25,9 +25,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>38</red>
+        <green>38</green>
+        <blue>38</blue>
        </color>
       </brush>
      </colorrole>
@@ -97,18 +97,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>38</red>
+        <green>38</green>
+        <blue>38</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>38</red>
+        <green>38</green>
+        <blue>38</blue>
        </color>
       </brush>
      </colorrole>
@@ -171,9 +171,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>38</red>
+        <green>38</green>
+        <blue>38</blue>
        </color>
       </brush>
      </colorrole>
@@ -243,18 +243,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>38</red>
+        <green>38</green>
+        <blue>38</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>38</red>
+        <green>38</green>
+        <blue>38</blue>
        </color>
       </brush>
      </colorrole>
@@ -317,9 +317,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>38</red>
+        <green>38</green>
+        <blue>38</blue>
        </color>
       </brush>
      </colorrole>
@@ -389,18 +389,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>38</red>
+        <green>38</green>
+        <blue>38</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>38</red>
+        <green>38</green>
+        <blue>38</blue>
        </color>
       </brush>
      </colorrole>
@@ -452,14 +452,27 @@
     </disabled>
    </palette>
   </property>
+  <property name="font">
+   <font>
+    <family>12</family>
+    <pointsize>9</pointsize>
+    <weight>9</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>PPE</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">font: 8pt &quot;Century Gothic&quot;;
+   <string notr="true">font: 75 9pt bold;
+background-color: rgb(38, 38, 38); 
 
 
 </string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -483,7 +496,7 @@
              <property name="sizeConstraint">
               <enum>QLayout::SetMaximumSize</enum>
              </property>
-             <item alignment="Qt::AlignRight|Qt::AlignVCenter">
+             <item>
               <widget class="QLabel" name="label">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -498,7 +511,7 @@
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>TextLabel</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -534,6 +547,12 @@
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QPushButton" name="AjoutBorne">
+            <property name="minimumSize">
+             <size>
+              <width>175</width>
+              <height>25</height>
+             </size>
+            </property>
             <property name="palette">
              <palette>
               <active>
@@ -542,16 +561,16 @@
                  <color alpha="255">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Button">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
+                  <red>55</red>
+                  <green>55</green>
+                  <blue>55</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -560,7 +579,7 @@
                  <color alpha="255">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -569,25 +588,25 @@
                  <color alpha="255">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Base">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
+                  <red>55</red>
+                  <green>55</green>
+                  <blue>55</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Window">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
+                  <red>55</red>
+                  <green>55</green>
+                  <blue>55</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -596,7 +615,7 @@
                  <color alpha="128">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -607,16 +626,16 @@
                  <color alpha="255">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Button">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
+                  <red>55</red>
+                  <green>55</green>
+                  <blue>55</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -625,7 +644,7 @@
                  <color alpha="255">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -634,25 +653,25 @@
                  <color alpha="255">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Base">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
+                  <red>55</red>
+                  <green>55</green>
+                  <blue>55</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Window">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
+                  <red>55</red>
+                  <green>55</green>
+                  <blue>55</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -661,7 +680,7 @@
                  <color alpha="128">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -672,16 +691,16 @@
                  <color alpha="255">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Button">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
+                  <red>55</red>
+                  <green>55</green>
+                  <blue>55</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -690,7 +709,7 @@
                  <color alpha="255">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -699,25 +718,25 @@
                  <color alpha="255">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Base">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
+                  <red>55</red>
+                  <green>55</green>
+                  <blue>55</blue>
                  </color>
                 </brush>
                </colorrole>
                <colorrole role="Window">
                 <brush brushstyle="SolidPattern">
                  <color alpha="255">
-                  <red>0</red>
-                  <green>0</green>
-                  <blue>0</blue>
+                  <red>55</red>
+                  <green>55</green>
+                  <blue>55</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -726,7 +745,7 @@
                  <color alpha="128">
                   <red>255</red>
                   <green>255</green>
-                  <blue>255</blue>
+                  <blue>0</blue>
                  </color>
                 </brush>
                </colorrole>
@@ -735,36 +754,58 @@
             </property>
             <property name="font">
              <font>
-              <family>Century Gothic</family>
-              <pointsize>9</pointsize>
-              <weight>50</weight>
+              <family>Gotham</family>
+              <pointsize>11</pointsize>
+              <weight>75</weight>
               <italic>false</italic>
-              <bold>false</bold>
+              <bold>true</bold>
              </font>
             </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 9pt &quot;Century Gothic&quot;;
-color : rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
+             <string notr="true">font: 75 11pt &quot;Gotham&quot; ;
+font: bold;
+color :rgb(255, 255, 0);
+background-color: rgb(55, 55, 55);
+border-style: solid;
+border-color: rgb(50, 50, 50);
+border-width: 2px;
+border-radius: 10px;
 </string>
             </property>
             <property name="text">
              <string>Borne</string>
             </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="Conso">
+            <property name="minimumSize">
+             <size>
+              <width>175</width>
+              <height>25</height>
+             </size>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 9pt &quot;Century Gothic&quot;;
-color : rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
+             <string notr="true">font: 75 11pt &quot;Gotham&quot; ;
+font: bold;
+color :rgb(255, 255, 0);
+background-color: rgb(55, 55, 55);
+border-style: solid;
+border-color: rgb(50, 50, 50);
+border-width: 2px;
+border-radius: 10px;
 </string>
             </property>
             <property name="text">
@@ -776,22 +817,33 @@ background-color: rgb(0, 0, 0);
         </item>
         <item>
          <widget class="QPushButton" name="Client">
+          <property name="minimumSize">
+           <size>
+            <width>115</width>
+            <height>25</height>
+           </size>
+          </property>
           <property name="font">
            <font>
-            <family>Century Gothic</family>
-            <pointsize>9</pointsize>
-            <weight>50</weight>
+            <family>Gotham</family>
+            <pointsize>11</pointsize>
+            <weight>75</weight>
             <italic>false</italic>
-            <bold>false</bold>
+            <bold>true</bold>
            </font>
           </property>
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 9pt &quot;Century Gothic&quot;;
-color : rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
+           <string notr="true">font: 75 11pt &quot;Gotham&quot; ;
+font: bold;
+color :rgb(255, 255, 0);
+background-color: rgb(55, 55, 55);
+border-style: solid;
+border-color: rgb(50, 50, 50);
+border-width: 2px;
+border-radius: 10px;
 </string>
           </property>
           <property name="text">
@@ -801,13 +853,24 @@ background-color: rgb(0, 0, 0);
         </item>
         <item>
          <widget class="QPushButton" name="AjoutFacture">
+          <property name="minimumSize">
+           <size>
+            <width>115</width>
+            <height>25</height>
+           </size>
+          </property>
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 9pt &quot;Century Gothic&quot;;
-color : rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
+           <string notr="true">font: 75 11pt &quot;Gotham&quot; ;
+font: bold;
+color :rgb(255, 255, 0);
+background-color: rgb(55, 55, 55);
+border-style: solid;
+border-color: rgb(50, 50, 50);
+border-width: 2px;
+border-radius: 10px;
 </string>
           </property>
           <property name="text">
@@ -817,13 +880,24 @@ background-color: rgb(0, 0, 0);
         </item>
         <item>
          <widget class="QPushButton" name="Autre">
+          <property name="minimumSize">
+           <size>
+            <width>115</width>
+            <height>25</height>
+           </size>
+          </property>
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="styleSheet">
-           <string notr="true">font: 9pt &quot;Century Gothic&quot;;
-color : rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
+           <string notr="true">font: 75 11pt &quot;Gotham&quot; ;
+font: bold;
+color :rgb(255, 255, 0);
+background-color: rgb(55, 55, 55);
+border-style: solid;
+border-color: rgb(50, 50, 50);
+border-width: 2px;
+border-radius: 10px;
 </string>
           </property>
           <property name="text">
@@ -899,103 +973,53 @@ background-color: rgb(0, 0, 0);
     </item>
     <item alignment="Qt::AlignHCenter">
      <widget class="QPushButton" name="Quit">
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Gotham</family>
+        <pointsize>11</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 9pt &quot;Century Gothic&quot;;
-color : rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
+       <string notr="true">font: 75 11pt &quot;Gotham&quot; ;
+font: bold;
+color :rgb(255, 255, 0);
+background-color: rgb(55, 55, 55);
+border-style: solid;
+border-color: rgb(50, 50, 50);
+border-width: 2px;
+border-radius: 10px;
 </string>
       </property>
       <property name="text">
        <string>Quitter</string>
       </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1343</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <property name="palette">
-    <palette>
-     <active>
-      <colorrole role="Base">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Window">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </active>
-     <inactive>
-      <colorrole role="Base">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Window">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </inactive>
-     <disabled>
-      <colorrole role="Base">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-      <colorrole role="Window">
-       <brush brushstyle="SolidPattern">
-        <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-       </brush>
-      </colorrole>
-     </disabled>
-    </palette>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>

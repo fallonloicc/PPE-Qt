@@ -10,7 +10,7 @@ Conso::Conso(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	ui.tableConso->setStyleSheet("QHeaderView::section { background-color:#b7b2b2 }");
+	ui.tableConso->setStyleSheet("QHeaderView::section { background-color:rgb(55, 55, 55); color: rgb(255, 255, 255); }");
 	loadConso();
 	connect(ui.AddButton_2, &QAbstractButton::clicked, this, &Conso::RecupInfo);
 	connect(ui.DelButton_2, &QAbstractButton::clicked, this, &Conso::DeleteConso);
@@ -82,15 +82,18 @@ void Conso::DeleteConso()
 
 	int numLigne = ui.tableConso->currentRow();
 	QTableWidgetItem* item = ui.tableConso->item(numLigne, 0);
-	QString idBorne = item->data(Qt::DisplayRole).toString();
-	ui.tableConso->removeRow(numLigne);
+	if (item != nullptr)
+	{
+		QString idBorne = item->data(Qt::DisplayRole).toString();
+		ui.tableConso->removeRow(numLigne);
 
-	QEventLoop eventLoop;
+		QEventLoop eventLoop;
 
-	QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-	connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
+		QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+		connect(manager, SIGNAL(finished(QNetworkReply*)), &eventLoop, SLOT(quit()));
 
-	manager->get(QNetworkRequest(QUrl("https://www.fallonloic.fr/PPE2/API/suppconso.php?idConso="+idBorne)));
+		manager->get(QNetworkRequest(QUrl("https://www.fallonloic.fr/PPE2/API/suppconso.php?idConso=" + idBorne)));
+	}
 
 }
 

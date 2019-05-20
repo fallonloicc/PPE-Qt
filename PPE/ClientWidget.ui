@@ -6,15 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1254</width>
-    <height>782</height>
+    <width>1258</width>
+    <height>1003</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>ClientWidget</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">font: 7pt &quot;Century Gothic&quot;;</string>
+   <string notr="true">font:&quot;Century Gothic&quot;;
+
+
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_7">
    <item>
@@ -33,7 +36,8 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 9pt &quot;Century Gothic&quot;;</string>
+          <string notr="true">font: 9pt &quot;Century Gothic&quot;;
+color:rgb(255, 255, 255) ;</string>
          </property>
          <property name="text">
           <string>CLIENTS</string>
@@ -45,20 +49,159 @@
        </item>
        <item>
         <widget class="QTableWidget" name="tabClient">
+         <property name="minimumSize">
+          <size>
+           <width>1236</width>
+           <height>517</height>
+          </size>
+         </property>
+         <property name="palette">
+          <palette>
+           <active>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Text">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="PlaceholderText">
+             <brush brushstyle="NoBrush">
+              <color alpha="128">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Text">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="PlaceholderText">
+             <brush brushstyle="NoBrush">
+              <color alpha="128">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Text">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="PlaceholderText">
+             <brush brushstyle="NoBrush">
+              <color alpha="128">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
          <property name="styleSheet">
-          <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
+          <string notr="true">font: 9pt &quot;Century Gothic&quot;;
+color :rgb(255, 255, 255);
+
+</string>
          </property>
          <property name="lineWidth">
           <number>3</number>
          </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContents</enum>
+         </property>
+         <property name="autoScrollMargin">
+          <number>50</number>
+         </property>
          <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>135</number>
+          <number>150</number>
          </attribute>
          <attribute name="horizontalHeaderMinimumSectionSize">
-          <number>135</number>
+          <number>150</number>
          </attribute>
          <attribute name="horizontalHeaderStretchLastSection">
           <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderDefaultSectionSize">
+          <number>50</number>
+         </attribute>
+         <attribute name="verticalHeaderMinimumSectionSize">
+          <number>50</number>
          </attribute>
          <column>
           <property name="text">
@@ -110,8 +253,22 @@
         <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
           <widget class="QPushButton" name="ajoutClient">
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>15</height>
+            </size>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
+            <string notr="true">font: 9pt &quot;Gotham&quot; ;
+font: bold;
+color :rgb(255, 255, 0);
+background-color: rgb(55, 55, 55);
+border-style: solid;
+border-color: rgb(50, 50, 50);
+border-width: 2px;
+border-radius: 9px;
+</string>
            </property>
            <property name="text">
             <string>Ajouter</string>
@@ -126,8 +283,22 @@
          </item>
          <item>
           <widget class="QPushButton" name="suppClient">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>15</height>
+            </size>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
+            <string notr="true">font: 9pt &quot;Gotham&quot; ;
+font: bold;
+color :rgb(255, 255, 0);
+background-color: rgb(55, 55, 55);
+border-style: solid;
+border-color: rgb(50, 50, 50);
+border-width: 2px;
+border-radius: 9px;
+</string>
            </property>
            <property name="text">
             <string>Supprimer</string>
@@ -139,7 +310,8 @@
        <item>
         <widget class="QGroupBox" name="groupBox">
          <property name="styleSheet">
-          <string notr="true">font: 8pt &quot;Century Gothic&quot;;</string>
+          <string notr="true">font: 8pt &quot;Century Gothic&quot;;
+color:rgb(255, 255, 255) ;</string>
          </property>
          <property name="title">
           <string>Informations</string>
@@ -161,7 +333,12 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="nomClient"/>
+                   <widget class="QLineEdit" name="nomClient">
+                    <property name="styleSheet">
+                     <string notr="true">font: 8pt &quot;Century Gothic&quot;;
+color: rgb(255, 255, 255);</string>
+                    </property>
+                   </widget>
                   </item>
                  </layout>
                 </item>
@@ -175,7 +352,12 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLineEdit" name="prenomClient"/>
+                   <widget class="QLineEdit" name="prenomClient">
+                    <property name="styleSheet">
+                     <string notr="true">font: 8pt &quot;Century Gothic&quot;;
+color: rgb(255, 255, 255);</string>
+                    </property>
+                   </widget>
                   </item>
                  </layout>
                 </item>
@@ -191,7 +373,12 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="adresseClient"/>
+                 <widget class="QLineEdit" name="adresseClient">
+                  <property name="styleSheet">
+                   <string notr="true">font: 8pt &quot;Century Gothic&quot;;
+color: rgb(255, 255, 255);</string>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -209,7 +396,12 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="codePostalClient"/>
+                     <widget class="QLineEdit" name="codePostalClient">
+                      <property name="styleSheet">
+                       <string notr="true">font: 8pt &quot;Century Gothic&quot;;
+color: rgb(255, 255, 255);</string>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </item>
@@ -223,7 +415,12 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="villeClient"/>
+                     <widget class="QLineEdit" name="villeClient">
+                      <property name="styleSheet">
+                       <string notr="true">font: 8pt &quot;Century Gothic&quot;;
+color: rgb(255, 255, 255);</string>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </item>
@@ -245,7 +442,12 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="mailClient"/>
+                 <widget class="QLineEdit" name="mailClient">
+                  <property name="styleSheet">
+                   <string notr="true">font: 8pt &quot;Century Gothic&quot;;
+color: rgb(255, 255, 255);</string>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -259,7 +461,12 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="numClient"/>
+                 <widget class="QLineEdit" name="numClient">
+                  <property name="styleSheet">
+                   <string notr="true">font: 8pt &quot;Century Gothic&quot;;
+color: rgb(255, 255, 255);</string>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -273,7 +480,12 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="siretClient"/>
+                 <widget class="QLineEdit" name="siretClient">
+                  <property name="styleSheet">
+                   <string notr="true">font: 8pt &quot;Century Gothic&quot;;
+color: rgb(255, 255, 255);</string>
+                  </property>
+                 </widget>
                 </item>
                 <item>
                  <widget class="QLabel" name="label">
@@ -283,7 +495,12 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="editpasswd"/>
+                 <widget class="QLineEdit" name="editpasswd">
+                  <property name="styleSheet">
+                   <string notr="true">font: 8pt &quot;Century Gothic&quot;;
+color: rgb(255, 255, 255);</string>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
